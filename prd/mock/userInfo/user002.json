@@ -1,0 +1,15 @@
+{
+  "userID":"002",
+  "userName":"zhang",
+  "guanzhu":6,
+  "fensi":4,
+  "headImg":"/images/head2.jpg",
+  "sex":"",
+  "city":"",
+  "xingQuXiang":"",
+  "signName":"",
+  "phone":"13141592654",
+  "password":"321",
+  "sign":"嗨起来!",
+  "fensiID":["001"]
+}

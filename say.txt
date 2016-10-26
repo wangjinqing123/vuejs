@@ -1,0 +1,2 @@
+npm list vue
+:查看版本

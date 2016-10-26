@@ -1,0 +1,12 @@
+<header id="header">
+  <ul>
+    <li>{{headLeft}}</li>
+    <li>
+      <span>
+        <b></b>
+        <b></b>
+      </span>
+    </li>
+    <li><span class="iconfont">{{headRight}}</span></li>
+  </ul>
+</header>

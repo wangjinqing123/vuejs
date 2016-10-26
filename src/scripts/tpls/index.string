@@ -1,0 +1,81 @@
+
+<div id="body">
+
+  <div class="container-box">
+
+    <div class="swiper-container index-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide background2" id="swiperPageOne">
+        <!-- 滑动内容 -->
+          <div id="w-index-scroll" class="scroll-view">
+            <div class="scroll">
+
+              <div class="head" id="fresh-head">
+                <img src="/images/arrow.png"/>
+                <span>下拉刷新...</span>
+              </div>
+
+              <div class="item background1 borderBottom"  v-for="item in list">
+                <div class="tuijian-box">
+                  <span class="tuijianren textColor" v-if="item.tuijianzhe">{{item.tuijianzhe}}</span>
+                  <span class="tuijian textColor2" v-if="item.tuijian">{{item.tuijian}}</span>
+                </div>
+                <div class="title  textColor">
+                  <span class="ellipsis-one">{{item.title}}</span>
+                </div>
+                <div class="user-info">
+                  <div class="user-box">
+                    <img class="user-icon" v-bind:src="item.userIcon"></img>
+                  </div>
+                  <div class="head-box">
+                    <img class="head-img" v-bind:src="item.headimg"></img>
+                    <span class="user-name textColor2">{{item.username}}</span>
+                  </div>
+                  <div>
+                    <img class="other" v-bind:src="item.xiala"></img>
+                  </div>
+                </div>
+                 <div class="image-box" v-if="item.image!=undefined">
+                  <img v-bind:src="item.image"></img>
+                </div>
+                <div class="span-box" v-if="{{item.desc}}">
+                  <span class="textColor3">{{item.desc}}</span>
+                </div>
+                <div class="bottom">
+                  <div class="bottom-item right">
+                    <span class="time textColor2">{{item.time}}</span>
+                  </div>
+                  <div class="bottom-item">
+                    <div class="icon zhuanfa-box">
+                      <span class="zhuanfa textColor4">{{item.zhuanfaCount}}</span>
+                      <img v-bind:src="item.zhuanfa"></img>
+                    </div>
+                    <div class="icon pinglun-box">
+                      <span class="pinglun textColor4">{{item.pinglunCount}}</span>
+                      <img v-bind:src="item.pinglun"></img>
+                    </div>
+                    <div class="icon zan-box">
+                      <span class="zan textColor4">{{item.zanCount}}</span>
+                      <img v-bind:src="item.zan"></img>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="foot" id="fresh-foot">
+                <img src="/images/arrow.png"/>
+                <span>上拉加载更多...</span>
+              </div>
+
+            </div>
+          </div>
+          <!-- 滑动内容-->
+        </div>
+        <div class="swiper-slide">
+          asdfsda
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

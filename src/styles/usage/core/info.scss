@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+.userInfo{
+  width:100%;
+  .headImgBox{
+    height:60px;
+    width:100%;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    > div{
+      @include flex(1);
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      &.headImg{
+        img{
+          @include border-radius(50%);
+          height:42px;
+          width:42px;
+        }
+      }
+      &.edit{
+        @include justify-content(flex-end);
+        height:24px;
+        > div{
+          height:24px;
+          margin-right:6px;
+          @include transform(scale(0.9));
+          @include border(1px,"#999",solid,10px);
+          @include flexbox();
+          @include justify-content(center);
+          @include align-items(center);
+          span{
+            font-size:12px;
+            padding-right: 4px;
+          }
+          img{
+            height:24px;
+            width:24px;
+          }
+        }
+      }
+    }
+  }
+	.mine-item{
+    width:100%;
+    margin-top:4px;
+		&.userName{
+			text-align: center;
+			height:30px;
+			line-height: 30px;
+		}
+		&.userID{
+			line-height: 20px;
+			height:20px;
+			text-align: center;
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      i{
+        margin-right:2px;
+      }
+		}
+		&.biaoqian{
+			line-height: 20px;
+			height:20px;
+			text-align: center;
+      @include ellipsis(1);
+		}
+		&.guanzhufensi{
+			height:40px;
+		  @include flexbox();
+			text-align: center;
+			.middle{
+				height:50%;
+				margin-top:10px;
+			}
+			.one , .two{
+				// font-size:12px;
+				@include flex(1);
+				@include flexbox();
+				@include flex-direction(column);
+				span{
+          &:first-child{
+            font-weight: 600;
+          }
+          &:last-child{
+            display: block;
+            @include transform(scale(0.94));
+          }
+				}
+			}
+		}
+		&.qiehuan{
+			width:100%;
+			height:25px;
+
+      @include border-radius(3px);
+			@include flexbox();
+			.inner-item{
+
+        border-right:0.5px solid #1C1C1C;
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+				position: relative;
+        @include flex(1);
+        &:last-child{
+          border:0;
+        }
+				img{
+					height:12px;
+					width:12px;
+					position: absolute;
+					right: 8px;
+					top:5px;
+				}
+				span{
+				}
+			}
+		}
+	}
+  .box{
+    padding:5px 10px;
+  }
+  ul.gzsx{
+
+    width:100%;
+    height:20px;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    &.active{
+      li:first-child{
+        color:#48D1CC;
+      }
+    }
+    li{
+      margin-left:10px;
+      margin-right:10px;
+      height:100%;
+      width:60px;
+      @include border(1px,"#1c1c1c",solid,10px);
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      span{
+        @include transform(scale(0.9));
+      }
+      i{
+        margin-right:4px;
+        @include transform(scale(0.9));
+      }
+    }
+  }
+}
+
+.qiehuan-box{
+  width:100%;
+
+}

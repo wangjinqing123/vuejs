@@ -1,0 +1,8 @@
+<footer id="footer">
+  <ul>
+    <li v-for="item in footerData" v-on:click="changeTab($index)">
+      <i class="iconfont"></i>
+      <span>{{item.text}}</span>
+    </li>
+  </ul>
+</footer>

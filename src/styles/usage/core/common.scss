@@ -1,0 +1,249 @@
+//头部switch按钮border-radius
+$back:20px;
+
+html{
+  height: 100%;
+  width:100%;
+
+}
+body{
+  height: 100%;
+  width:100%;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+// pc端 移动端
+@media screen and (min-width:768px) {
+  body{
+    width:60%;
+    margin: 0 auto;
+    background:#ededed;
+  }
+  html{
+    background: #fff;
+  }
+}
+
+.container-box{
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
+
+  > div{
+    @include flex(1);
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+
+  }
+}
+#header{
+  height:44px;
+  z-index:99;
+  position: relative;;
+  line-height: 44px;
+  background:#fff;
+  ul{
+    padding:0 6px;
+    @include flexbox();
+    li{
+      .back,.more{
+        font-size:20px;
+      }
+
+      &.weight{
+        font-weight: bold;
+      }
+      &.fixWidth{
+        @include flex(1);
+
+      }
+      &.text-right{
+        text-align: right;
+      }
+      &.text{
+        font-size:14px;
+      }
+      &.headCenter{
+        @include flex(1);
+        text-align: center;
+        width:100%;
+      }
+      &.input{
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        input{
+          width:90%;
+          height:26px;
+          border:0;
+          border-radius:4px;
+        }
+      }
+      &.switch{
+        @include flexbox(inline-flex);
+        @include justify-content(center);
+        @include align-items(center);
+        span{
+          width:0.66rem;
+          height:26px;
+          text-align: center;
+          line-height:26px;
+
+          font-size:12px;
+          &.left{
+            border-radius:($back 0px 0px $back) / ($back 0px 0px $back);
+          }
+          &.right{
+            border-radius:(0px  $back $back 0px) / (0px $back $back 0px);
+          }
+        }
+      }
+      &.search{
+        span{
+          font-size:20px;
+          display: block;
+        }
+
+      }
+    }
+  }
+}
+#body{
+  @include flex(1);
+  overflow: hidden;
+  width:100%;
+  height:100%;
+}
+
+#footer{
+  height:44px;
+  border-top:1px solid #ddd;
+  position: relative;
+  z-index:99;
+  background: #fff;
+  ul{
+    @include flexbox();
+    li{
+      @include flex(1);
+      height:100%;
+      width:100%;
+      text-align: center;
+      @include flexbox();
+      @include flex-direction(column);
+
+      .icon{
+        display: block;
+        @include flex(1);
+        width:100%;
+        font-size:18px;
+      }
+      span{
+        display: block;
+        @include flex(1);
+        width:100%;
+        font-size:12px;
+      }
+    }
+  }
+}
+
+
+.scroll-view{
+  height:100%;
+  .scroll{
+    width:100%;
+    .head {
+      text-align: center;
+      height: 35px;
+      line-height: 35px;
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      img{
+        width: 16px;
+        display: inline-block;
+        @include _prefix(transform,rotate(180deg));
+        @include _prefix(transition,transform 150ms);
+      }
+      span{
+
+      }
+    }
+    .up {
+      @include _prefix(transform,rotate(360deg) !important);
+    }
+    .foot {
+      text-align: center;
+      height: 35px;
+      line-height: 35px;
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      img {
+        display: inline-block;
+        width: 16px;
+        @include _prefix(transform,rotate(0deg));
+        @include _prefix(transition,transform 150ms);
+      }
+    }
+    .down {
+      @include _prefix(transform,rotate(180deg) !important);
+    }
+  }
+}
+
+.qiehuan-active{
+  background:#1c1c1c;
+  color:#fff;
+}
+.loading{
+  top:40%;
+}
+
+
+@media screen and (min-width:415px){
+  .smallFont{
+    font-size: 16px;
+  }
+  .middleFont{
+    font-size:18px;
+  }
+  .bigFont{
+    font-size:20px;
+  }
+}
+@media screen and (max-width: 414px){
+  .smallFont{
+    font-size:15px;
+  }
+  .middleFont{
+    font-size:16px;
+  }
+  .bigFont{
+    font-size:18px;
+  }
+}
+@media screen and (max-width: 375px){
+  .smallFont{
+    font-size:14px;
+  }
+  .middleFont{
+    font-size:15px;
+  }
+  .bigFont{
+    font-size:16px;
+  }
+}
+@media screen and (max-width: 320px){
+  .smallFont{
+    font-size:12px;
+  }
+  .middleFont{
+    font-size:14px;
+  }
+  .bigFont{
+    font-size:15px;
+  }
+}

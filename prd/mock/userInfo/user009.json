@@ -1,0 +1,15 @@
+{
+ "userID":"009",
+ "userName":"九号选手",
+ "guanzhu":9,
+ "fensi":2,
+ "headImg":"/images/head1.jpg",
+ "sex":"",
+ "city":"",
+ "xingQuXiang":"",
+ "signName":"",
+ "phone":"18389909875",
+ "password":"123",
+ "sign":"898989haha",
+ "fensiID":["001","002"]
+}

@@ -1,0 +1,54 @@
+<div id="box">
+  {{name}}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="box">
+  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+  <label for="jack">Jack</label>
+  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+  <label for="john">John</label>
+  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+  <label for="mike">Mike</label>
+  <br>
+  <span>Checked names: {{ checkedNames | json }}</span>
+  <div>{{fullName}}</div>
+
+  <div style="height:100px;width:100%;"></div>
+
+  <input type="radio" id="one" value="One" v-model="picked">
+  <label for="one">One</label>
+  <br>
+  <input type="radio" id="two" value="Two" v-model="picked">
+  <label for="two">Two</label>
+  <br>
+  <span>Picked: {{ picked }}</span>
+
+  <div style="height:100px;width:100%;"></div>
+
+  <select v-model="selected" multiple>
+    <option value="000">北京</option>
+    <option value="001">上海</option>
+    <option value="002">广州</option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+
+  <div style="height:100px;width:100%;"></div>
+
+
+</div> -->
