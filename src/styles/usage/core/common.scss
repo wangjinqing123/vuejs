@@ -77,6 +77,7 @@ body{
         input{
           width:90%;
           height:26px;
+          line-height: 26px;
           border:0;
           border-radius:4px;
         }
@@ -92,12 +93,16 @@ body{
           line-height:26px;
 
           font-size:12px;
+
           &.left{
+
             border-radius:($back 0px 0px $back) / ($back 0px 0px $back);
           }
           &.right{
+
             border-radius:(0px  $back $back 0px) / (0px $back $back 0px);
           }
+
         }
       }
       &.search{

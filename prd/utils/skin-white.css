@@ -25,7 +25,7 @@
 }
 .switchStyle{
   color:#202020;
-  border:0.5px solid #202020;
+  border:1px solid #202020;
 }
 .switchStyleActive{
   background:#202020;
@@ -75,35 +75,44 @@
 
 
 .border1{
-  border:0.5px solid #ddd;
+  border:1px solid #ddd;
+  /*border:0.5px solid #ddd;*/
 }
 .border2{
-  border:0.5px solid #bbb;
+  border:1px solid #bbb;
+  /*border:0.5px solid #bbb;*/
 }
 .border3{
-  border:0.5px solid #999;
+  /*border:0.5px solid #999;*/
+  border:1px solid #999;
 }
 .border4{
-  border:0.5px solid #1C1C1C;
+  /*border:0.5px solid #1C1C1C;*/
+  border:1px solid #1C1C1C;
 }
 .border5{
-  border:0.5px solid #1C1C1C;
+  border:1px solid #1C1C1C;
+  /*border:0.5px solid #1C1C1C; */
 }
 .borderLeft{
   display: block;
   height:100%;
   width:0px;
-  border-left:0.5px solid #999;
+  border-left:1px solid #999;
+  /*border-left:0.5px solid #999;*/
 }
 .borderLeft2{
   display: block;
   height:100%;
   width:0px;
-  border-left:0.5px solid #1C1C1C;
+  border-left:1px solid #1C1C1C;
+  /*border-left:0.5px solid #1C1C1C;*/
 }
 .borderBottom{
-  border-bottom: 0.5px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  /*border-bottom: 0.5px solid #ddd;*/
 }
 .borderTop{
-  border-top: 0.5px solid #ddd;
+  /*border-top: 0.5px solid #ddd;*/
+  border-top: 1px solid #ddd;
 }

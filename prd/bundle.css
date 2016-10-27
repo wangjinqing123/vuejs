@@ -736,6 +736,7 @@ body {
       #header ul li.input input {
         width: 90%;
         height: 26px;
+        line-height: 26px;
         border: 0;
         border-radius: 4px; }
     #header ul li.switch {
@@ -1769,6 +1770,7 @@ body {
       #header ul li.input input {
         width: 90%;
         height: 26px;
+        line-height: 26px;
         border: 0;
         border-radius: 4px; }
     #header ul li.switch {
@@ -2096,7 +2098,7 @@ body {
       display: -webkit-flex;
       display: flex; }
       .userInfo .mine-item.qiehuan .inner-item {
-        border-right: 0.5px solid #1C1C1C;
+        border-right: 1px solid #1C1C1C;
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
@@ -2210,6 +2212,277 @@ body {
       height: 100%; }
       .swiper-container .cellSmall .item.last {
         background: red; }
+
+/**
+ * @module fragment
+ * @method yo-list
+ * @version 3.0.0
+ * @description 构造列表的自定义使用方法
+ * @demo http://doyoe.github.io/Yo/demo/fragment/yo-list.html
+ * @param {String} $name 定义扩展名称 <3.0.0>
+ * @param {Length} $margin 外边距 <3.0.0>
+ * @param {Length} $radius 圆角半径长度 <3.0.0>
+ * @param {Length} $border-width 外边框厚度 <3.0.0>
+ * @param {Color} $border-color 边框色 <3.0.0>
+ * @param {Length} $item-padding 子项的内补白 <3.0.0>
+ * @param {Length} $label-padding 列表组头内补白 <3.0.0>
+ * @param {Color} $label-bgcolor 列表组头背景色 <3.0.0>
+ * @param {Color} $active-bgcolor 子项点击反馈背景色 <3.0.0>
+ * @param {Color} $on-bgcolor 子项选中背景色 <3.0.0>
+ * @param {Color} $on-color 子项选中文本色 <3.0.0>
+ * @param {Color} $item-border-color 子项边框色 <3.0.0>
+ * @param {Color} $label-border-color 列表组头边框色 <3.0.0>
+ * @param {Length} $item-font-size 子项字号 <3.0.0>
+ * @param {Length} $label-font-size 列表组头字号 <3.0.0>
+ * @param {Length} $item-border-space 子项边线左侧偏移量 <3.0.0>
+ * @param {Length} $more-font-size 更多区域字号 <3.0.0>
+ * @param {Color} $more-color 更多区域文本色 <3.0.0>
+ */
+.yo-list {
+  position: relative; }
+  .yo-list::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    content: " ";
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 0 1px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .yo-list::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .yo-list::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .yo-list::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .yo-list > .label,
+  .yo-list > .item,
+  .yo-list .front {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .yo-list > .label > .flex,
+    .yo-list > .item > .flex,
+    .yo-list .front > .flex {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      margin: 0 .1rem; }
+      .yo-list > .label > .flex:first-child,
+      .yo-list > .item > .flex:first-child,
+      .yo-list .front > .flex:first-child {
+        margin-left: 0; }
+      .yo-list > .label > .flex:last-child,
+      .yo-list > .item > .flex:last-child,
+      .yo-list .front > .flex:last-child {
+        margin-right: 0; }
+    .yo-list > .label > .yo-ico,
+    .yo-list > .item > .yo-ico,
+    .yo-list .front > .yo-ico {
+      display: block; }
+      .yo-list > .label > .yo-ico:last-child,
+      .yo-list > .item > .yo-ico:last-child,
+      .yo-list .front > .yo-ico:last-child {
+        color: #aaa;
+        font-size: 0.12rem; }
+    .yo-list > .label.tr,
+    .yo-list > .item.tr,
+    .yo-list .front.tr {
+      padding: 0; }
+  .yo-list > .label {
+    padding: 0.03rem 0.1rem;
+    position: relative;
+    background-color: #ebebeb;
+    color: #666;
+    font-size: 0.13rem;
+    font-weight: normal; }
+    .yo-list > .label::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-color: #eee;
+      border-style: solid;
+      border-width: 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .yo-list > .label::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .yo-list > .label::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .yo-list > .label::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .yo-list > .label:first-child::after {
+      border-width: 0 0 1px; }
+    .yo-list > .label + .item::after {
+      border-width: 0; }
+    .yo-list > .label > .col {
+      padding: 0.03rem 0.1rem; }
+  .yo-list > .item,
+  .yo-list .front {
+    padding: 0.11rem 0.1rem 0.12rem; }
+  .yo-list > .item {
+    overflow: hidden;
+    background-color: #fff;
+    color: #212121;
+    position: relative; }
+    .yo-list > .item::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-color: #ddd;
+      border-style: solid;
+      border-width: 1px 0 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .yo-list > .item::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .yo-list > .item::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .yo-list > .item::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .yo-list > .item::after {
+      left: 0.1rem; }
+    .yo-list > .item:first-child::after {
+      border-width: 0; }
+    .yo-list > .item-input > .input {
+      -webkit-appearance: none;
+      appearance: none;
+      display: block;
+      width: 100%;
+      border: 0; }
+      .yo-list > .item-input > .input::-webkit-input-placeholder {
+        color: #bbb; }
+    .yo-list > .item-stacked {
+      display: block; }
+      .yo-list > .item-stacked > .mark {
+        padding-bottom: .05rem; }
+    .yo-list > .item.item-active:active,
+    .yo-list > .item.item-active:active .front, .yo-list > .item.item-light,
+    .yo-list > .item.item-light .front {
+      background-color: #f8f8f8; }
+    .yo-list > .item > .col {
+      padding: 0.11rem 0.1rem 0.12rem; }
+
+/**
+ * yo-list扩展
+ */
+.yo-list-inset {
+  margin: 0.2rem 0.1rem 0 0.1rem;
+  border-radius: 0.2rem;
+  overflow: hidden; }
+  .yo-list-inset::after {
+    border-width: 1px; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .yo-list-inset::after {
+        border-radius: 0.2rem; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .yo-list-inset::after {
+        border-radius: 0.4rem; } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .yo-list-inset::after {
+        border-radius: 0.6rem; } }
+
+.yo-list-group > .label {
+  padding: 0.2rem 0.1rem 0.05rem; }
+  .yo-list-group > .label > .col {
+    padding: 0.2rem 0.1rem 0.05rem; }
+  .yo-list-group > .label::after {
+    border-color: #ccc; }
+
+.yo-list-table > .label {
+  background-color: #f9f9f9; }
+  .yo-list-table > .label::after {
+    border-color: #aaa; }
+
+.yo-slidermenu,
+.yo-slidermenu > .item {
+  position: relative;
+  display: block !important;
+  padding: 0 !important; }
+
+.yo-slidermenu .front {
+  position: relative;
+  z-index: 2;
+  background-color: #fff; }
+
+.yo-slidermenu .transition {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
+
+.yo-slidermenu .action {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .yo-slidermenu .action > .item {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    width: .1px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    word-wrap: break-word;
+    word-break: break-all; }
+  .yo-slidermenu .action-right {
+    right: auto;
+    left: 0; }
 
 .talk-swiper {
   width: 100%;
@@ -2396,7 +2669,7 @@ body {
       display: -webkit-flex;
       display: flex; }
       .userInfo .mine-item.qiehuan .inner-item {
-        border-right: 0.5px solid #1C1C1C;
+        border-right: 1px solid #1C1C1C;
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;

@@ -20,16 +20,13 @@
 
               <div id="message-scroll" class="scroll-view">
                 <div class="scroll">
-
-                dsf
-
-
+                  私信
                 </div>
               </div>
 
             </div>
             <div class="swiper-slide">
-              asdfsda
+              提醒
             </div>
           </div>
         </div>
@@ -100,7 +97,7 @@ export default{
     },
     //点击切换
     switchPage(index){
-      messageSwiper.slideTo(index);
+      messageSwiper.slideTo(index);  
       for(let i = 0;i<this.head.center.length;i++){
         this.head.center[i].isActive = false;
         if(i==index){

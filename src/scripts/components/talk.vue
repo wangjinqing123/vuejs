@@ -1,4 +1,3 @@
-<!-- v-link="{name:'detailname', params:{id:123}}" -->
 <template>
   <div>
     <header id="header" class="borderBottom">
@@ -25,17 +24,24 @@
       </div>
       <div class="cell-body">
         <!--  -->
-        <div class="swiper-container cell">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide cellMain">main</div>
-            <div class="swiper-slide cellSmall">
-                <div class="item" data-swiper-parallax="-100">Slide 1</div>
-                <div class="item last" data-swiper-parallax="-100">Slide 2</div>
-            </div>
-
-          </div>
-        </div>
-        <!--  -->
+        <!-- <div class="yo-list">
+          <a href="#" class="item yo-slidermenu">
+             <div class="front">
+                 <div class="mark">
+                     <img src="*.jpg" alt="美女" />
+                 </div>
+                 <div class="flex">
+                     <h3>高圆圆</h3>
+                     <p>这是一个我很喜欢的美女</p>
+                 </div>
+             </div>
+             <div class="action action-right">
+                 <span class="item">详情</span>
+                 <span class="item">删除</span>
+           </div>
+         </a>
+        </div> -->
+        <!-- cell -->
       </div>
     </div>
   </div>
@@ -64,35 +70,45 @@ export default{
       },
       swiperImgs:[],
       paginationActive:[{isActive:true},{isActive:false},{isActive:false},{isActive:false}],
-      swiper:''
+      swiper:'',
+      cellList:[]
     }
   },
   ready(){
-    var s = new Swiper('.cell',{
-      freeMode:true,
-      freeModeSticky:true,
-      freeModeMomentumBounce:false,
-      onSlideChangeEnd: function(swiper){
-        console.log(swiper);
-      },
-      onSetTranslate:function(swiper, translate){
-        console.log(translate);
-      }
-
-
-    });
-
+    // var s = new Swiper('.cell',{
+    //   freeMode:true,
+    //   freeModeSticky:true,
+    //   freeModeMomentumBounce:false,
+    //   onSlideChangeEnd: function(swiper){
+    //     console.log(swiper);
+    //   },
+    //   onSetTranslate:function(swiper, translate){
+    //     console.log(translate);
+    //   }
+    //
+    //
+    // });
     this.change(1);
     this.initSwiper('/mock/talk/banner.json');
+    this.getListData();
   },
   methods:{
+    //列表数据
+    getListData:function(){
+      this.$http.get("/mock/talk/talkList.json").then((response)=>{
+        console.log(response.data);
+        this.cellList = response.data;
+      },(response)=>{});
+    },
     test: function (e) {
       this.event = e.type
     },
     initSwiper(url){
       var self = this;
       this.$http.get(url).then((response)=>{
+
         this.swiperImgs = response.data;
+
         this.$nextTick(function(){
           self.swiper = new Swiper(".talk-swiper",{
             pagination:".talk-pagination",
