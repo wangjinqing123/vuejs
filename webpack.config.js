@@ -20,6 +20,7 @@ module.exports = {
     port:8090, //webpack 启动的服务
     inline:true,
     host:"192.168.191.1",
+    // host:"localhost",
     proxy:{
       //代理:ajax获取数据。josn-server启的服务
       '/daili/*':{

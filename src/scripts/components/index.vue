@@ -2,7 +2,7 @@
 <template>
   <div class="container-box commonColor">
     <router-view transition="fade"></router-view>
-    <footer id="footer">
+    <footer id="footer" class="Top">
       <ul>
         <li v-bind:class="tabIndex == $index ? 'Active' : 'footerC'"
             v-for="item in footerData"

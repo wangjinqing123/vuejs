@@ -1,7 +1,7 @@
 <!-- v-link="{name:'detailname', params:{id:123}}" -->
 <template>
   <div>
-    <header id="header" class="borderBottom">
+    <header id="header" class="Bottom">
       <ul>
         <li class="Active text" v-on:click="styleSheet">{{headLeft}}</li>
         <li class="switch headCenter">
@@ -33,7 +33,7 @@
                       <span class="smallFont">下拉刷新...</span>
                     </div>
 
-                    <div class="item commonColor borderBottom"  v-for="item in list">
+                    <div class="item commonColor Bottom"  v-for="item in list">
                       <div class="tuijian-box smallFont">
                         <span class="tuijianren cellDeepColor" v-if="item.tuijianzhe">{{item.tuijianzhe}}</span>
                         <span class="tuijian textColor2" v-if="item.tuijian">{{item.tuijian}}</span>
@@ -87,6 +87,8 @@
                       <span class="smallFont">上拉加载更多...</span>
                     </div>
 
+
+                    <div style="height:87px;width:0px;"></div>
                   </div>
                 </div>
               </template>
@@ -151,11 +153,13 @@
                       </div>
                     </div>
 
+
                     <div class="foot freshColor" id="fresh-foot" v-if="slide.isLoadShow">
                       <img v-bind:src="slide.isS==false ? '/images/arrow.png':'/images/ajax-loader.gif'"/>
                       <span class="smallFont">上拉加载更多...</span>
                     </div>
 
+                    <div style="height:87px;width:0px;"></div>
                   </div>
                 </div>
               </template>
@@ -270,6 +274,7 @@ export default{
     swiperView(){
       var self = this;
       mySwiper = new Swiper('.index-swiper', {
+        resistanceRatio:0,
         onSlideChangeStart: function(swiper){
           self.switchPage(swiper.activeIndex);
         }

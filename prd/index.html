@@ -7,8 +7,18 @@
   <title>demo</title>
   <link rel="stylesheet" href="/libs/swiper.css">
   <link rel="stylesheet" href="/images/font/iconfont.css">
+  <!-- <link rel="stylesheet" href="/libs/vue-swipe.css" charset="utf-8"> -->
   <link rel="stylesheet" href="/utils/skin-white.css">
   <link rel="stylesheet" href="/bundle.css">
+  <script>
+
+    document.addEventListener('touchmove',touch,false);
+    function touch(e){
+      if(e.target.tagName.toUpperCase()!=="IFRAME"){
+        e.preventDefault();
+      }
+    }
+  </script>
 </head>
 <body>
   <router-view :transition="transitionName"></router-view>
@@ -20,6 +30,7 @@
   <script src="/libs/vue-resource.js"></script>
   <script src="/libs/vue-router.js"></script>
   <script src="/libs/localforage.js"></script>
+  <!-- <script src="/libs/vue-swipe.js"></script> -->
   <script src ="/bundle.js"></script>
 
   <!-- <script src="/libs/debuggap.js"></script> -->

@@ -1,6 +1,6 @@
 <template>
   <div class="container-box">
-    <header id="header" class="borderBottom">
+    <header id="header" class="Bottom">
       <ul>
         <li class="Active text" v-on:click="backPrepage"><span class="back iconfont">&#xe604;</span></li>
         <li class="switch headCenter middleFont">

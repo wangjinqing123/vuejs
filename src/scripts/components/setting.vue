@@ -1,6 +1,6 @@
 <template>
   <div class="setting">
-    <header id="header" class="borderBottom">
+    <header id="header" class="Bottom">
       <ul>
         <li class="Active text" v-on:click="backPrepage"><span class="back iconfont">&#xe604;</span></li>
         <li class="headCenter middleFont">
@@ -21,6 +21,9 @@
 import VueDialog from "../plugins/dialog.js";
 Vue.use(VueDialog);
 new VueDialog();
+
+
+
 
 export default{
 

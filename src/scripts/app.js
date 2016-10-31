@@ -14,6 +14,8 @@ import mine from './components/mine.vue';
 import userDongtai from './components/userDongtai.vue';
 //设置页面
 import setting from './components/setting.vue';
+//其他
+import details from './components/details.vue';
 //状态管理
 import store from './vuex/store.js';
 
@@ -82,6 +84,10 @@ router.map({
   "/setting":{
     name:'setting',
     component:setting
+  },
+  "/details/:id":{
+    name:'details',
+    component:details
   }
 
 });

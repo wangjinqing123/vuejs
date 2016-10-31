@@ -1,0 +1,37 @@
+@charset "UTF-8";
+$cellHeight:44px;
+
+.box-box{
+  height:100%;
+  width:100%;
+  background:#f5f5f5;
+  padding-top: 12px;
+}
+
+
+.box-cell{
+  font-size:14px;
+  background: #fff;
+  height:$cellHeight;
+  width:100%;
+  padding:0 10px;
+  margin-bottom:12px;
+  line-height: $cellHeight;
+  @include flexbox();
+  .cell-left{
+    width:$cellHeight;
+  }
+  .cell-center{
+    @include flex(1);
+  }
+  .cell-right{
+    width:$cellHeight;
+    text-align: right;
+    line-height: $cellHeight;
+    i{
+      font-size:12px;
+      display: inline-block;
+
+    }
+  }
+}

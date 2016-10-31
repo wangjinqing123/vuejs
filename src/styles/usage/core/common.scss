@@ -80,6 +80,7 @@ body{
           line-height: 26px;
           border:0;
           border-radius:4px;
+          text-indent: 4px;
         }
       }
       &.switch{
@@ -124,7 +125,6 @@ body{
 
 #footer{
   height:44px;
-  border-top:1px solid #ddd;
   position: relative;
   z-index:99;
   background: #fff;
@@ -207,6 +207,11 @@ body{
   top:40%;
 }
 
+.reverse{
+  transform: rotate(180deg);
+  -webkit-transform:rotate(180deg);
+}
+
 
 @media screen and (min-width:415px){
   .smallFont{
@@ -250,5 +255,38 @@ body{
   }
   .bigFont{
     font-size:15px;
+  }
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:1){
+  .Bottom{
+    border-bottom:1px solid #ddd;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+  .Bottom{
+    border-bottom:0.5px solid #ddd;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:3){
+  .Bottom{
+    border-bottom:0.333px solid #ddd;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:1){
+  .Top{
+    border-top:1px solid #ddd;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+  .Top{
+    border-top:0.5px solid #ddd;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:3){
+  .Top{
+    border-top:0.333px solid #ddd;
   }
 }

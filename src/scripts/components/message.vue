@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header id="header" class="borderBottom">
+    <header id="header" class="Bottom">
       <ul>
         <li class="Active text"  v-on:click="addFriends">{{head.left}}</li>
         <li class="switch headCenter">
@@ -20,13 +20,44 @@
 
               <div id="message-scroll" class="scroll-view">
                 <div class="scroll">
-                  私信
+
+                  <div class="box-box">
+                    <template v-for="item in sixinList">
+                      <mt-cell-swipe
+                        v-bind:title="item"
+                        :right="[
+                          {
+                            content: '删除',
+                            style: { background: 'red', color: '#fff' },
+
+                          }
+                        ]">
+                          <Slot></Slot>
+                        </mt-cell-swipe>
+                    </template>
+                  </div>
+
                 </div>
               </div>
 
             </div>
             <div class="swiper-slide">
-              提醒
+              <div id="tixing-scroll" class="scroll-view">
+                <div class="scroll">
+
+                  <div class="message-box">
+                    <template v-for="item in tixingList">
+                      <div class="message-cell Bottom">
+                        <div class="cell-left">img</div>
+                        <div class="cell-center">{{item}}</div>
+                        <div class="cell-right"><i class="iconfont reverse">&#xe604;</i></div>
+                      </div>
+                    </template>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -36,7 +67,13 @@
 
 <script>
 
+import "../libs/cell-swipe/style.css";
+
 import { tabChanger } from "../vuex/actions";
+import { CellSwipe } from 'mint-ui';
+
+Vue.component(CellSwipe.name, CellSwipe);
+
 let messageSwiper ="";
 let messageScroll = "";
 
@@ -56,7 +93,9 @@ export default{
           {'name':'私信',isLeft:true,isRight:false,isActive:true},
           {'name':'提醒',isLeft:false,isRight:true,isActive:false}
         ]
-      }
+      },
+      sixinList:["错过的七月","火柴盒官方","未关注人私信"],
+      tixingList:["邀请","转发与邀请","评论","赞","新粉丝","火柴盒小助手"]
     }
   },
   ready(){
@@ -72,10 +111,9 @@ export default{
       var self = this;
       self.$http.get('/mock/main/list.json').then((response) => {
         self.list = response.data;
-        setTimeout(function(){
+        self.$nextTick(function(){
           messageScroll.refresh();
-        },1000);
-
+        });
       }, (response) => {
         console.log('首页数据加载出错');
       });
@@ -90,6 +128,7 @@ export default{
     swiperView(){
       var self = this;
       messageSwiper = new Swiper('.message-swiper', {
+        touchRatio:0,
         onSlideChangeStart: function(swiper){
           self.switchPage(swiper.activeIndex);
         }
@@ -97,7 +136,7 @@ export default{
     },
     //点击切换
     switchPage(index){
-      messageSwiper.slideTo(index);  
+      messageSwiper.slideTo(index);
       for(let i = 0;i<this.head.center.length;i++){
         this.head.center[i].isActive = false;
         if(i==index){

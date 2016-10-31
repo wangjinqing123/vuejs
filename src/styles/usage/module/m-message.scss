@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+.message-cell{
+  font-size:15px;
+  height:40px;
+  width:100%;
+  padding:0 10px;
+  line-height: 40px;
+  @include flexbox();
+  .cell-left{
+    width:40px;
+  }
+  .cell-center{
+    color:#2F4F4F;
+    font-weight: bold;
+    @include flex(1);
+  }
+  .cell-right{
+    width:40px;
+    text-align: right;
+    line-height: 40px;
+    i{
+      display: inline-block;
+      color:#aaa;
+    }
+  }
+}

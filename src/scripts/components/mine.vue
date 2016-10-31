@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header id="header" class="borderBottom">
+    <header id="header" class="Bottom">
       <ul>
         <li class="Active text fixWidth vipColor" v-on:click="VIP">{{head.left}}</li>
         <li class="headCenter weight fixWidth bigFont">

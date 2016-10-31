@@ -1,0 +1,25 @@
+[{
+  "kindID": "001",
+  "titleCell": {
+    "title": "热门话题",
+    "more": "更多",
+    "isFreshHidden": false,
+    "isMoreIHidden": true
+  }
+}, {
+  "kindID": "002",
+  "titleCell": {
+    "title": "猜你喜欢的话题",
+    "more": "换一批",
+    "isFreshHidden": true,
+    "isMoreIHidden": false
+  }
+}, {
+  "kindID": "003",
+  "titleCell": {
+    "title": "推荐话题",
+    "more": "更多",
+    "isFreshHidden": false,
+    "isMoreIHidden": true
+  }
+}]
